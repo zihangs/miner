@@ -112,55 +112,11 @@ public class MineTSM {
 				  // convert
 				  TSMinerTransitionSystem ts = tsm_output.getTransitionSystem();
 				  
-				  
-				  System.out.println(ts.getStates().size());
-				  //===============================================================
-				  NetSystem sys = new NetSystem();
+				  // export PNML
+				  exportPNML(ts);
 					
-					Map<String,Place> pMap = new HashMap<String, Place>(); 
-					for (org.processmining.models.graphbased.directed.transitionsystem.State s : ts.getNodes()) {
-						//System.out.println(s.getLabel());
-						Place p = new Place(s.getLabel());
-						sys.addPlace(p);
-						pMap.put(s.getLabel(), p);
-					}
-					
-					for (org.processmining.models.graphbased.directed.transitionsystem.Transition tt : ts.getEdges()) {
-						String label = tt.getLabel();
-						if (label.endsWith("+")) label = label.substring(0, label.length()-1);
-						//System.out.println(label);
-						Transition t = new Transition(label);
-						sys.addTransition(t);
-						sys.addFlow(pMap.get(tt.getSource().getLabel()), t);
-						sys.addFlow(t,pMap.get(tt.getTarget().getLabel()));
-					}
-					
-					for (Place p : sys.getSourcePlaces()) p.setName("START");
-					for (Place p : sys.getSinkPlaces()) p.setName("END");
-					
-					sys.loadNaturalMarking();
-					
-					String pnml;
-					try {
-						pnml = PNMLSerializer.serializePetriNet(sys);
-						IOUtils.toFile(outputFileName + ".pnml", pnml);
-					} catch (SerializationException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-
-				  //=================================================================
-				  
-					
-				  // export
-				  TsmlExportTS exportTool = new TsmlExportTS();
-				  File outputFile = new File(outputFileName);
-				  try {
-					  exportTool.export(uicontext, ts, outputFile);
-				  } catch (IOException e) {
-				  	  // TODO Auto-generated catch block
-					  e.printStackTrace();
-				  }
+				  // export TSML
+				  // exportTSML(ts);
 				  System.out.println("MineTSML: " + outputFileName + "    Success!");
 			  }
 		    };
@@ -190,6 +146,53 @@ public class MineTSM {
 	}
 	
 	
+	
+	public void exportPNML(TSMinerTransitionSystem ts) {
+		NetSystem sys = new NetSystem();
+			
+		Map<String,Place> pMap = new HashMap<String, Place>(); 
+		for (org.processmining.models.graphbased.directed.transitionsystem.State s : ts.getNodes()) {
+			//System.out.println(s.getLabel());
+			Place p = new Place(s.getLabel());
+			sys.addPlace(p);
+			pMap.put(s.getLabel(), p);
+		}
+		
+		for (org.processmining.models.graphbased.directed.transitionsystem.Transition tt : ts.getEdges()) {
+			String label = tt.getLabel();
+			if (label.endsWith("+")) label = label.substring(0, label.length()-1);
+			//System.out.println(label);
+			Transition t = new Transition(label);
+			sys.addTransition(t);
+			sys.addFlow(pMap.get(tt.getSource().getLabel()), t);
+			sys.addFlow(t,pMap.get(tt.getTarget().getLabel()));
+		}
+		
+		for (Place p : sys.getSourcePlaces()) p.setName("START");
+		for (Place p : sys.getSinkPlaces()) p.setName("END");
+		
+		sys.loadNaturalMarking();
+		
+		String pnml;
+		try {
+			pnml = PNMLSerializer.serializePetriNet(sys);
+			IOUtils.toFile(outputFileName, pnml);
+		} catch (SerializationException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}
+	
+	public void exportTSML(TSMinerTransitionSystem ts) {
+		TsmlExportTS exportTool = new TsmlExportTS();
+		File outputFile = new File(outputFileName);
+		try {
+			exportTool.export(uicontext, ts, outputFile);
+		} catch (IOException e) {
+		  	// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	// Config classifier filter
 	// Param: percentage (0-100) - int

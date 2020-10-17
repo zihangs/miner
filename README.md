@@ -1,6 +1,6 @@
 # Process Mining Tools for Linux Terminals
 
-The tools are built on top of ProM ([source code]( https://svn.win.tue.nl/repos/prom/)) and thanks for the help by Adam Burke and Dr Sander Leemans from QUT and Dr Eric Verbeek from TU/e. You can use the tool by downloading a runnable Jar from my google drive [here](https://drive.google.com/uc?export=download&id=1uiLXa8-5ReNkUxK_wKPUfbQcnIrNJr1c), and put this Jar file in the ``Workshop/`` directory. Or you can download the source code to your location machine and import the java project to your IDE for testing or further development.
+The tools are built on top of ProM ([source code]( https://svn.win.tue.nl/repos/prom/)) and thanks for the help by Adam Burke and Dr Sander Leemans from QUT and Dr Eric Verbeek from TU/e. You can use the tool by downloading a runnable Jar from my google drive [here](https://drive.google.com/file/d/1jqf96RtdSDdGeJIfmnTWK8CVXy7q8ZwV/view?usp=sharing), and put this Jar file in the ``Workshop/`` directory. Or you can download the source code to your location machine and import the java project to your IDE for testing or further development.
 
 
 
@@ -32,7 +32,7 @@ ProM package source code for directly flow miner can be found [here](https://svn
 
 ```sh
 # java -cp miner.jar autoMiner <miner name> <input file> <output file> <number of states> <classifier filter> <label filter>
-java -cp miner.jar autoMiner -TSM example_15_short.xes output.tsml -1 100 100
+java -cp miner.jar autoMiner -TSM example_15_short.xes output.pnml -1 100 100
 ```
 
 ProM package source code for transition system miner can be found [here](https://svn.win.tue.nl/repos/prom/Packages/TransitionSystems/Trunk/src/org/processmining/plugins/).
