@@ -3,7 +3,7 @@
 <state id="state1">
 <name>
 <text>
-29</text>
+20</text>
 </name>
 <graphics>
 <position x="30.0" y="20.0"/>
@@ -14,7 +14,7 @@
 <state id="state2">
 <name>
 <text>
-28</text>
+2</text>
 </name>
 <graphics>
 <position x="30.0" y="20.0"/>
@@ -25,7 +25,7 @@
 <state id="state3">
 <name>
 <text>
-10</text>
+6</text>
 </name>
 <graphics>
 <position x="30.0" y="20.0"/>
@@ -36,7 +36,7 @@
 <state id="state4">
 <name>
 <text>
- |&gt; </text>
+5</text>
 </name>
 <graphics>
 <position x="30.0" y="20.0"/>
@@ -47,7 +47,7 @@
 <state id="state5">
 <name>
 <text>
-21</text>
+9</text>
 </name>
 <graphics>
 <position x="30.0" y="20.0"/>
@@ -58,7 +58,7 @@
 <state id="state6">
 <name>
 <text>
- [] </text>
+12</text>
 </name>
 <graphics>
 <position x="30.0" y="20.0"/>
@@ -69,7 +69,7 @@
 <state id="state7">
 <name>
 <text>
-34</text>
+33</text>
 </name>
 <graphics>
 <position x="30.0" y="20.0"/>
@@ -91,7 +91,7 @@
 <state id="state9">
 <name>
 <text>
-5</text>
+34</text>
 </name>
 <graphics>
 <position x="30.0" y="20.0"/>
@@ -102,7 +102,7 @@
 <state id="state10">
 <name>
 <text>
-9</text>
+30</text>
 </name>
 <graphics>
 <position x="30.0" y="20.0"/>
@@ -113,7 +113,7 @@
 <state id="state11">
 <name>
 <text>
-30</text>
+31</text>
 </name>
 <graphics>
 <position x="30.0" y="20.0"/>
@@ -124,7 +124,7 @@
 <state id="state12">
 <name>
 <text>
-25</text>
+1</text>
 </name>
 <graphics>
 <position x="30.0" y="20.0"/>
@@ -135,7 +135,7 @@
 <state id="state13">
 <name>
 <text>
-26</text>
+ |&gt; </text>
 </name>
 <graphics>
 <position x="30.0" y="20.0"/>
@@ -146,7 +146,7 @@
 <state id="state14">
 <name>
 <text>
-33</text>
+26</text>
 </name>
 <graphics>
 <position x="30.0" y="20.0"/>
@@ -157,7 +157,7 @@
 <state id="state15">
 <name>
 <text>
-31</text>
+ [] </text>
 </name>
 <graphics>
 <position x="30.0" y="20.0"/>
@@ -168,7 +168,7 @@
 <state id="state16">
 <name>
 <text>
-7</text>
+24</text>
 </name>
 <graphics>
 <position x="30.0" y="20.0"/>
@@ -179,7 +179,7 @@
 <state id="state17">
 <name>
 <text>
-22</text>
+28</text>
 </name>
 <graphics>
 <position x="30.0" y="20.0"/>
@@ -187,166 +187,166 @@
 <fill color="#c0c0c0"/>
 </graphics>
 </state>
-<transition id="transition1" source="state11" target="state15">
+<transition id="transition1" source="state13" target="state4">
+<name>
+<text>
+ |&gt; </text>
+</name>
+</transition>
+<transition id="transition2" source="state10" target="state11">
 <name>
 <text>
 01_HOOFD_065_1</text>
 </name>
 </transition>
-<transition id="transition2" source="state7" target="state17">
-<name>
-<text>
-01_HOOFD_050</text>
-</name>
-</transition>
-<transition id="transition3" source="state1" target="state11">
-<name>
-<text>
-01_HOOFD_060</text>
-</name>
-</transition>
-<transition id="transition4" source="state16" target="state12">
-<name>
-<text>
-01_HOOFD_190_2</text>
-</name>
-</transition>
-<transition id="transition5" source="state15" target="state9">
-<name>
-<text>
-06_VD_010</text>
-</name>
-</transition>
-<transition id="transition6" source="state4" target="state9">
-<name>
-<text>
- |&gt; </text>
-</name>
-</transition>
-<transition id="transition7" source="state9" target="state5">
-<name>
-<text>
-01_HOOFD_100</text>
-</name>
-</transition>
-<transition id="transition8" source="state17" target="state6">
-<name>
-<text>
- [] </text>
-</name>
-</transition>
-<transition id="transition9" source="state4" target="state3">
-<name>
-<text>
- |&gt; </text>
-</name>
-</transition>
-<transition id="transition10" source="state4" target="state12">
-<name>
-<text>
- |&gt; </text>
-</name>
-</transition>
-<transition id="transition11" source="state4" target="state10">
-<name>
-<text>
- |&gt; </text>
-</name>
-</transition>
-<transition id="transition12" source="state12" target="state13">
-<name>
-<text>
-01_HOOFD_015</text>
-</name>
-</transition>
-<transition id="transition13" source="state13" target="state2">
-<name>
-<text>
-01_HOOFD_020</text>
-</name>
-</transition>
-<transition id="transition14" source="state5" target="state16">
-<name>
-<text>
-01_HOOFD_065_2</text>
-</name>
-</transition>
-<transition id="transition15" source="state14" target="state7">
-<name>
-<text>
-01_HOOFD_130</text>
-</name>
-</transition>
-<transition id="transition16" source="state9" target="state14">
-<name>
-<text>
-01_HOOFD_100</text>
-</name>
-</transition>
-<transition id="transition17" source="state2" target="state1">
-<name>
-<text>
-01_HOOFD_040</text>
-</name>
-</transition>
-<transition id="transition18" source="state10" target="state3">
-<name>
-<text>
-01_HOOFD_030_2</text>
-</name>
-</transition>
-<transition id="transition19" source="state1" target="state17">
-<name>
-<text>
-01_HOOFD_060</text>
-</name>
-</transition>
-<transition id="transition20" source="state4" target="state5">
-<name>
-<text>
- |&gt; </text>
-</name>
-</transition>
-<transition id="transition21" source="state13" target="state8">
-<name>
-<text>
-01_HOOFD_020</text>
-</name>
-</transition>
-<transition id="transition22" source="state8" target="state2">
-<name>
-<text>
-01_HOOFD_030_1</text>
-</name>
-</transition>
-<transition id="transition23" source="state16" target="state17">
-<name>
-<text>
-01_HOOFD_190_2</text>
-</name>
-</transition>
-<transition id="transition24" source="state12" target="state17">
-<name>
-<text>
-01_HOOFD_015</text>
-</name>
-</transition>
-<transition id="transition25" source="state3" target="state17">
+<transition id="transition3" source="state12" target="state2">
 <name>
 <text>
 01_HOOFD_010</text>
 </name>
 </transition>
-<transition id="transition26" source="state5" target="state17">
+<transition id="transition4" source="state11" target="state4">
+<name>
+<text>
+06_VD_010</text>
+</name>
+</transition>
+<transition id="transition5" source="state8" target="state17">
+<name>
+<text>
+01_HOOFD_030_1</text>
+</name>
+</transition>
+<transition id="transition6" source="state1" target="state3">
+<name>
+<text>
+01_HOOFD_060</text>
+</name>
+</transition>
+<transition id="transition7" source="state16" target="state6">
+<name>
+<text>
+01_HOOFD_190_2</text>
+</name>
+</transition>
+<transition id="transition8" source="state13" target="state12">
+<name>
+<text>
+ |&gt; </text>
+</name>
+</transition>
+<transition id="transition9" source="state6" target="state14">
+<name>
+<text>
+01_HOOFD_015</text>
+</name>
+</transition>
+<transition id="transition10" source="state5" target="state12">
+<name>
+<text>
+01_HOOFD_030_2</text>
+</name>
+</transition>
+<transition id="transition11" source="state4" target="state3">
+<name>
+<text>
+01_HOOFD_100</text>
+</name>
+</transition>
+<transition id="transition12" source="state3" target="state16">
 <name>
 <text>
 01_HOOFD_065_2</text>
 </name>
 </transition>
-<transition id="transition27" source="state1" target="state5">
+<transition id="transition13" source="state3" target="state2">
+<name>
+<text>
+01_HOOFD_065_2</text>
+</name>
+</transition>
+<transition id="transition14" source="state4" target="state7">
+<name>
+<text>
+01_HOOFD_100</text>
+</name>
+</transition>
+<transition id="transition15" source="state1" target="state2">
 <name>
 <text>
 01_HOOFD_060</text>
+</name>
+</transition>
+<transition id="transition16" source="state13" target="state5">
+<name>
+<text>
+ |&gt; </text>
+</name>
+</transition>
+<transition id="transition17" source="state13" target="state6">
+<name>
+<text>
+ |&gt; </text>
+</name>
+</transition>
+<transition id="transition18" source="state7" target="state9">
+<name>
+<text>
+01_HOOFD_130</text>
+</name>
+</transition>
+<transition id="transition19" source="state1" target="state10">
+<name>
+<text>
+01_HOOFD_060</text>
+</name>
+</transition>
+<transition id="transition20" source="state6" target="state2">
+<name>
+<text>
+01_HOOFD_015</text>
+</name>
+</transition>
+<transition id="transition21" source="state14" target="state8">
+<name>
+<text>
+01_HOOFD_020</text>
+</name>
+</transition>
+<transition id="transition22" source="state17" target="state1">
+<name>
+<text>
+01_HOOFD_040</text>
+</name>
+</transition>
+<transition id="transition23" source="state9" target="state2">
+<name>
+<text>
+01_HOOFD_050</text>
+</name>
+</transition>
+<transition id="transition24" source="state2" target="state15">
+<name>
+<text>
+ [] </text>
+</name>
+</transition>
+<transition id="transition25" source="state14" target="state17">
+<name>
+<text>
+01_HOOFD_020</text>
+</name>
+</transition>
+<transition id="transition26" source="state16" target="state2">
+<name>
+<text>
+01_HOOFD_190_2</text>
+</name>
+</transition>
+<transition id="transition27" source="state13" target="state3">
+<name>
+<text>
+ |&gt; </text>
 </name>
 </transition>
 </tsml>

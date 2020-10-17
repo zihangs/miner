@@ -17,6 +17,12 @@ import org.deckfour.xes.classification.XEventClassifier;
 import org.deckfour.xes.info.XLogInfo;
 import org.deckfour.xes.info.impl.XLogInfoImpl;
 import org.deckfour.xes.model.XLog;
+import org.jbpt.petri.NetSystem;
+import org.jbpt.petri.Place;
+import org.jbpt.petri.Transition;
+import org.jbpt.petri.io.PNMLSerializer;
+import org.jbpt.throwable.SerializationException;
+import org.jbpt.utils.IOUtils;
 import org.processmining.contexts.uitopia.UIPluginContext;
 import org.processmining.framework.plugin.PluginContext;
 import org.processmining.plugins.transitionsystem.converter.util.TSConversions;
@@ -32,6 +38,10 @@ import org.processmining.plugins.tsml.exporting.TsmlExportTS;
 import au.edu.qut.prom.helpers.ConsoleUIPluginContext;
 import au.edu.qut.prom.helpers.HeadlessDefinitelyNotUIPluginContext;
 import au.edu.qut.prom.helpers.HeadlessUIPluginContext;
+
+
+
+
 
 public class MineTSM {
 	private XEventClassifier transitionClassifier;
@@ -101,6 +111,47 @@ public class MineTSM {
 				  TSMinerOutput tsm_output = tsm.mine(tsm_input);
 				  // convert
 				  TSMinerTransitionSystem ts = tsm_output.getTransitionSystem();
+				  
+				  
+				  System.out.println(ts.getStates().size());
+				  //===============================================================
+				  NetSystem sys = new NetSystem();
+					
+					Map<String,Place> pMap = new HashMap<String, Place>(); 
+					for (org.processmining.models.graphbased.directed.transitionsystem.State s : ts.getNodes()) {
+						//System.out.println(s.getLabel());
+						Place p = new Place(s.getLabel());
+						sys.addPlace(p);
+						pMap.put(s.getLabel(), p);
+					}
+					
+					for (org.processmining.models.graphbased.directed.transitionsystem.Transition tt : ts.getEdges()) {
+						String label = tt.getLabel();
+						if (label.endsWith("+")) label = label.substring(0, label.length()-1);
+						//System.out.println(label);
+						Transition t = new Transition(label);
+						sys.addTransition(t);
+						sys.addFlow(pMap.get(tt.getSource().getLabel()), t);
+						sys.addFlow(t,pMap.get(tt.getTarget().getLabel()));
+					}
+					
+					for (Place p : sys.getSourcePlaces()) p.setName("START");
+					for (Place p : sys.getSinkPlaces()) p.setName("END");
+					
+					sys.loadNaturalMarking();
+					
+					String pnml;
+					try {
+						pnml = PNMLSerializer.serializePetriNet(sys);
+						IOUtils.toFile(outputFileName + ".pnml", pnml);
+					} catch (SerializationException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+
+				  //=================================================================
+				  
+					
 				  // export
 				  TsmlExportTS exportTool = new TsmlExportTS();
 				  File outputFile = new File(outputFileName);
