@@ -1,8 +1,8 @@
-# Process Mining Tools for Linux Terminals
+# A Command Line Tool for Process Mining
 
-The tools are built on top of ProM ([source code]( https://svn.win.tue.nl/repos/prom/)) and thanks for the help by Adam Burke and Dr Sander Leemans from QUT and Dr Eric Verbeek from TU/e. You can use the tool by downloading a runnable Jar from my google drive [here](https://drive.google.com/file/d/1jqf96RtdSDdGeJIfmnTWK8CVXy7q8ZwV/view?usp=sharing), and put this Jar file in the ``Workshop/`` directory. Or you can download the source code to your location machine and import the java project to your IDE for testing or further development.
+The tool was built on top of ProM ([source code]( https://svn.win.tue.nl/repos/prom/)) and thanks for the help by Adam Burke and Dr Sander Leemans from QUT and Dr Eric Verbeek from TU/e. 
 
-
+The ``miner.jar`` is the command line tool which contains mining functions. So you can mining process models by calling the ``miner.jar`` directly. Or you can check the source code and import the java project to the IDE on your local machine for testing or further development. Notice that, this tool was developed with java 8 runtime environment, so better to use java 8 to avoid issues.
 
 ### Miners and Commands
 
